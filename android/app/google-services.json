@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "283699180041",
+    "firebase_url": "https://live-time-table.firebaseio.com",
+    "project_id": "live-time-table",
+    "storage_bucket": "live-time-table.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:283699180041:android:1f266ddc2f8a704a8fbed8",
+        "android_client_info": {
+          "package_name": "com.example.livetimetable"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "283699180041-ek2adb9rspd7an8912vg3nq30lp8166i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAADF8DXHExtaiJQicNx0MjTp2mxg8NHLM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "283699180041-ek2adb9rspd7an8912vg3nq30lp8166i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
