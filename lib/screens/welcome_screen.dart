@@ -15,7 +15,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
   void initState() {
     super.initState();
     controller = AnimationController(
-      duration: Duration(seconds: 1),
+      duration: Duration(milliseconds: 500),
       vsync: this,
     );
     animation =
@@ -38,7 +38,6 @@ class _WelcomeScreenState extends State<WelcomeScreen>
             Column(
               children: <Widget>[
                 Row(
-                  // mainAxisAlignment: MainAxisAlignment.start,
                   children: <Widget>[
                     Text(
                       "Live",
@@ -48,7 +47,6 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                   ],
                 ),
                 Row(
-                  // mainAxisAlignment: MainAxisAlignment.start,
                   children: <Widget>[
                     Text(
                       "Time Table",
