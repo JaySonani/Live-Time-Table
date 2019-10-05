@@ -92,7 +92,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                           "Malav Shah",
                           "Jaimi Sheta",
                           "Jay Sonani",
-                          "Ewani Sukhadiya"
+                          "Ewani Sukhadia"
                         ],
                         textStyle:
                             TextStyle(fontSize: 20.0, fontFamily: "M_medium"),

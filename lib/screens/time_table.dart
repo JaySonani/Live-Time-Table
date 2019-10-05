@@ -26,12 +26,14 @@ class _TimeTableState extends State<TimeTable> {
     super.initState();
   }
 
-  Future fetchData() async {
+  void fetchData() async {
+    setState(() => showSpinner = true);
     String key;
+    DocumentReference dr;
     for (var i = 0; i < data.length; i++) {
       key = getKey(i);
       try {
-        DocumentReference dr = _firestore.document("TimeTable/$key");
+        dr = _firestore.document("TimeTable/$key");
         await dr.get().then((datasnapshot) {
           if (datasnapshot.exists) {
             setState(() {
