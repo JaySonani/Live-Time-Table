@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 // import 'package:animated_text_kit/animated_text_kit.dart';
 
@@ -81,26 +82,26 @@ class _WelcomeScreenState extends State<WelcomeScreen>
             ),
             Stack(
               children: <Widget>[
-                // Row(
-                //   mainAxisAlignment: MainAxisAlignment.end,
-                //   children: <Widget>[
-                //     RotateAnimatedTextKit(
-                //         duration: Duration(seconds: 5),
-                //         text: [
-                //           "Keny Shah",
-                //           "Malav Shah",
-                //           "Jaimi Sheta",
-                //           "Jay Sonani",
-                //           "Ewani Sukhadiya"
-                //         ],
-                //         textStyle:
-                //             TextStyle(fontSize: 20.0, fontFamily: "M_medium"),
-                //         textAlign: TextAlign.start,
-                //         alignment:
-                //             AlignmentDirectional.topEnd // or Alignment.topLeft
-                //         ),
-                //   ],
-                // ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: <Widget>[
+                    RotateAnimatedTextKit(
+                        duration: Duration(seconds: 5),
+                        text: [
+                          "Keny Shah",
+                          "Malav Shah",
+                          "Jaimi Sheta",
+                          "Jay Sonani",
+                          "Ewani Sukhadiya"
+                        ],
+                        textStyle:
+                            TextStyle(fontSize: 20.0, fontFamily: "M_medium"),
+                        textAlign: TextAlign.start,
+                        alignment:
+                            AlignmentDirectional.topEnd // or Alignment.topLeft
+                        ),
+                  ],
+                ),
                 Container(
                   margin: EdgeInsets.only(top: 50),
                   child: Row(
