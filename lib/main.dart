@@ -15,7 +15,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(fontFamily: 'M_medium'),
+      theme: ThemeData(fontFamily: 'M_medium', primaryColor: Color(0xFF5FB808)),
       title: 'Live Time Table',
       debugShowCheckedModeBanner: false,
       home: WelcomeScreen(),

@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:livetimetable/screens/edit_timetable.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
 var _firestore = Firestore.instance;
 String sub;
 bool showSpinner = true;
+String username, password;
 
 class TimeTable extends StatefulWidget {
   @override
@@ -14,16 +16,23 @@ class TimeTable extends StatefulWidget {
 
 class _TimeTableState extends State<TimeTable> {
   List<String> data = [];
+  TextEditingController un, pwd;
 
   @override
   void initState() {
     for (var i = 0; i < 35; i++) data.add('$i');
+    fetchData();
 
+    super.initState();
+  }
+
+  Future fetchData() async {
+    String key;
     for (var i = 0; i < data.length; i++) {
-      String key = getKey(i);
+      key = getKey(i);
       try {
         DocumentReference dr = _firestore.document("TimeTable/$key");
-        dr.get().then((datasnapshot) {
+        await dr.get().then((datasnapshot) {
           if (datasnapshot.exists) {
             setState(() {
               data[i] = datasnapshot.data['sub'];
@@ -35,8 +44,6 @@ class _TimeTableState extends State<TimeTable> {
       }
     }
     setState(() => showSpinner = false);
-
-    super.initState();
   }
 
   get orientation => null;
@@ -89,22 +96,20 @@ class _TimeTableState extends State<TimeTable> {
 
               child: GridTile(
                 child: InkWell(
-                  onTap: () => showModalBottomSheet(
-            context: context, builder: (context) => EditTimeTable()),
+                  onTap: () => null,
                   splashColor: index < 5
-                  ? Colors.white
-                  : index < 10
-                      ? Colors.lightBlue[50]
-                      : index < 15
-                          ? Colors.lightBlue[100]
-                          : index < 20
-                              ? Colors.lightBlue[300]
-                              : index < 25
-                                  ? Colors.lightBlue[500]
-                                  : index < 30
-                                      ? Colors.lightBlue[700]
-                                      : Colors.lightBlue[800],
-
+                      ? Colors.white
+                      : index < 10
+                          ? Colors.lightBlue[50]
+                          : index < 15
+                              ? Colors.lightBlue[100]
+                              : index < 20
+                                  ? Colors.lightBlue[300]
+                                  : index < 25
+                                      ? Colors.lightBlue[500]
+                                      : index < 30
+                                          ? Colors.lightBlue[700]
+                                          : Colors.lightBlue[800],
                   child: Center(
                       child: index < 5
                           ? days(index)
@@ -121,15 +126,72 @@ class _TimeTableState extends State<TimeTable> {
         ),
       ),
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: () => showModalBottomSheet(
-            context: context, builder: (context) => EditTimeTable()),
+        onPressed: () {
+          Alert(
+              context: context,
+              title: "LOGIN",
+              content: Column(
+                children: <Widget>[
+                  TextField(
+                    controller: un,
+                    decoration: InputDecoration(
+                      icon: Icon(Icons.account_circle),
+                      labelText: 'Username',
+                    ),
+                    onChanged: (value) => username = value,
+                  ),
+                  TextField(
+                    obscureText: true,
+                    decoration: InputDecoration(
+                      icon: Icon(Icons.lock),
+                      labelText: 'Password',
+                    ),
+                    onChanged: (value) => password = value,
+                  ),
+                ],
+              ),
+              buttons: [
+                DialogButton(
+                  color: Color(0xFF5FB808),
+                  onPressed: () {
+                    if (username == "admin" && password == "admin") {
+                      Navigator.of(context).pop();
+                      showModalBottomSheet(
+                        context: context,
+                        builder: (context) => EditTimeTable(),
+                      );
+                    } else
+                      Alert(
+                        context: context,
+                        title: "Login Failed",
+                        type: AlertType.error,
+                        buttons: [
+                          DialogButton(
+                            color: Color(0xFF5FB808),
+                            onPressed: () => Navigator.of(context).pop(),
+                            child: Text(
+                              "OKAY",
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 20),
+                            ),
+                          ),
+                        ],
+                      ).show();
+                  },
+                  child: Text(
+                    "LOGIN",
+                    style: TextStyle(color: Colors.white, fontSize: 20),
+                  ),
+                )
+              ]).show();
+        },
         label: Text(
           "EDIT",
         ),
         icon: Icon(Icons.edit),
         backgroundColor: Color(0xFF5FB808),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      // floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 

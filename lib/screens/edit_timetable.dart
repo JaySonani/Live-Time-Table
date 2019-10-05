@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:livetimetable/screens/edit_database.dart';
+// import 'package:livetimetable/screens/edit_database.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
+
+import 'edit_database.dart';
 
 class EditTimeTable extends StatefulWidget {
   @override
@@ -200,45 +202,15 @@ class _EditTimeTableState extends State<EditTimeTable> {
               child: RaisedButton(
                 onPressed: () {
                   if (dropdownValue != null && radioValue != null) {
-                    Alert(
-                        context: context,
-                        title: "LOGIN",
-                        content: Column(
-                          children: <Widget>[
-                            TextField(
-                              decoration: InputDecoration(
-                                icon: Icon(Icons.account_circle),
-                                labelText: 'Username',
-                              ),
-                            ),
-                            TextField(
-                              obscureText: true,
-                              decoration: InputDecoration(
-                                icon: Icon(Icons.lock),
-                                labelText: 'Password',
-                              ),
-                            ),
-                          ],
-                        ),
-                        buttons: [
-                          DialogButton(
-                            onPressed: () => Navigator.pop(context),
-                            child: Text(
-                              "LOGIN",
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 20),
-                            ),
-                          )
-                        ]).show();
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => EditDB(
+                              day: dropdownValue,
+                              lecture: radioValue,
+                            )),
+                  );
                   }
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(
-                  //       builder: (context) => EditDB(
-                  //             day: dropdownValue,
-                  //             lecture: radioValue,
-                  //           )),
-                  // );
                   else {
                     Alert(
                       context: context,
