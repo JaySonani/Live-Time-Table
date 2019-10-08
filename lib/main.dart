@@ -19,14 +19,11 @@ class _MyAppState extends State<MyApp> {
       title: 'Live Time Table',
       debugShowCheckedModeBanner: false,
       home: WelcomeScreen(),
-      routes:  {
-        'liveScreen' : (context) => LiveScreen(),
-        'timetable' : (context) =>  TimeTable(),
-        'editdb' : (context) => EditDB(),
+      routes: {
+        'liveScreen': (context) => LiveScreen(),
+        'timetable': (context) => TimeTable(),
+        'editdb': (context) => EditDB(),
       },
-
-
-
     );
   }
 }

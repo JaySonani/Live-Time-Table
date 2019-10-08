@@ -86,7 +86,12 @@ class _EditDBState extends State<EditDB> {
               style: TextStyle(
                   color: Colors.white, fontSize: 20, fontFamily: 'M_semi_bold'),
             ),
-            onPressed: () => Navigator.pop(context),
+            onPressed: () {
+              Navigator.of(context).pop();
+              Navigator.of(context).pop();
+              Navigator.of(context).pop();
+              Navigator.of(context).pop();
+            },
             width: 120,
           )
         ]).show();

@@ -6,7 +6,6 @@ class MyTime {
 
   String ret = "";
 
-
   MyTime() {
     ret = "";
     switch (day) {

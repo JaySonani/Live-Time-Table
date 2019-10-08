@@ -1,6 +1,5 @@
-import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
-// import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 
 class WelcomeScreen extends StatefulWidget {
   @override
@@ -98,7 +97,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                             TextStyle(fontSize: 20.0, fontFamily: "M_medium"),
                         textAlign: TextAlign.start,
                         alignment:
-                            AlignmentDirectional.topEnd // or Alignment.topLeft
+                            AlignmentDirectional.topEnd
                         ),
                   ],
                 ),

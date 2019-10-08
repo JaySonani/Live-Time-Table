@@ -26,7 +26,7 @@ class _TimeTableState extends State<TimeTable> {
     super.initState();
   }
 
-  void fetchData() async {
+  void fetchData()  {
     setState(() => showSpinner = true);
     String key;
     DocumentReference dr;
@@ -34,7 +34,7 @@ class _TimeTableState extends State<TimeTable> {
       key = getKey(i);
       try {
         dr = _firestore.document("TimeTable/$key");
-        await dr.get().then((datasnapshot) {
+         dr.get().then((datasnapshot) {
           if (datasnapshot.exists) {
             setState(() {
               data[i] = datasnapshot.data['sub'];

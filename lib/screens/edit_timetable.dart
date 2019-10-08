@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-// import 'package:livetimetable/screens/edit_database.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
-
 import 'edit_database.dart';
 
 class EditTimeTable extends StatefulWidget {
@@ -202,16 +200,15 @@ class _EditTimeTableState extends State<EditTimeTable> {
               child: RaisedButton(
                 onPressed: () {
                   if (dropdownValue != null && radioValue != null) {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => EditDB(
-                              day: dropdownValue,
-                              lecture: radioValue,
-                            )),
-                  );
-                  }
-                  else {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => EditDB(
+                                day: dropdownValue,
+                                lecture: radioValue,
+                              )),
+                    );
+                  } else {
                     Alert(
                       context: context,
                       // type: AlertType.success,

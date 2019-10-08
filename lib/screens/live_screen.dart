@@ -39,7 +39,7 @@ class _LiveScreenState extends State<LiveScreen> {
           sub = documentSnapshot.data['sub'].toString();
         });
       });
-    } catch (e){
+    } catch (e) {
       print(e);
     }
   }
@@ -95,7 +95,6 @@ class _LiveScreenState extends State<LiveScreen> {
                 margin: EdgeInsets.only(top: height * 0.25),
                 decoration: BoxDecoration(
                   color: Color(0xfff0f0f0),
-                  // borderRadius: BorderRadius.only(topLeft: Radius.circular(30), topRight: Radius.circular(30),)
                 ),
               ),
               Column(
