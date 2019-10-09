@@ -4,11 +4,8 @@ import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 var _firestore = Firestore.instance;
-String fac = "",
-    faculty = "",
-    sub = "",
-    subject = ""; //aanathi kam thai jse?kabar nai bov try
-bool _showSpinner = true; //aaya  true aavse ek min
+String fac = "", faculty = "", sub = "", subject = "";
+bool _showSpinner = true;
 
 class LiveScreen extends StatefulWidget {
   @override
