@@ -10,11 +10,11 @@
 
 ## Screenshots
 
-<img src="ss/1.png" height=400 align=left>
-<img src="ss/2.png" height=400 align=left>
-<img src="ss/3.png" height=400 align=left>
-<img src="ss/4.png" height=400 align=left>
-<img src="ss/5.png" height=400 align=left>
-<img src="ss/6.png" height=400 align=left>
-<img src="ss/7.png" height=400 align=left>
-<img src="ss/8.png" height=400 align=left>
+<img src="ss/1.png" height=395 align=left>
+<img src="ss/2.png" height=395 align=left>
+<img src="ss/3.png" height=395 align=left>
+<img src="ss/4.png" height=395 align=left>
+<img src="ss/5.png" height=395 align=left>
+<img src="ss/6.png" height=395 align=left>
+<img src="ss/7.png" height=395 align=left>
+<img src="ss/8.png" height=395 align=left>
